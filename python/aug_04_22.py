@@ -15,5 +15,8 @@ def countDigits(digit:int):
     if digit==0:
         return 0
     else:
-        return countDigits(digit//10)+1
+        return countDigits(digit//10)+1 #divide by 10 to remove a digit, incrrement a counter for each digit
 
+
+if __name__=='__main__':
+    print(countDigits(1289396387328))

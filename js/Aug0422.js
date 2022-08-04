@@ -13,6 +13,11 @@ Total maximum execution time : 3800 ms.
 Native repeat is forbidden.
 Using of an existing repeat polyfill too (that's not the challenge objective).
 */
+
+/**
+ * 
+*/
+
 function repeat(string,times){
     if(times>268435440){
         times=268435440;
@@ -20,15 +25,15 @@ function repeat(string,times){
     if(times==0){
         return "";
     }
-    let multiplier=Math.floor(Math.log2(times));
+    let multiplier=Math.floor(Math.log2(times)); //amount of 2 to the power of 'multiplier' that fits in times
     if(multiplier==0){
         return string;
     }
     let str=string;
-    for(i=0;i<multiplier;i++){
+    for(i=0;i<multiplier;i++){//repeat by doubling each time
         string+=string;
     }
-    return repeat(str,times-Math.pow(2,multiplier))+string;
+    return repeat(str,times-Math.pow(2,multiplier))+string; //recurse with remainning times
    
 }
 console.log(repeat("a",268435437).length);
