@@ -5,10 +5,11 @@ public class Aug0422{
         int [] nums={1,2,3,4,5,6};
         int[] result=hw.selReverse(nums,10);
         System.out.println();
-         for(int i:result){
-            System.out.print(i+" ");
-         }
-         System.out.println();
+        //  for(int i:result){
+        //     System.out.print(i+" ");
+        //  }
+        //  System.out.println();
+        System.out.println(10%3);
     }
 
 
@@ -29,7 +30,7 @@ public class Aug0422{
         if (nums.length==0) return nums;
         int start=0;
         int end=interval-1;
-        while(start<nums.length-1){
+        while(start<nums.length-1){ //loop entire array for each interval 
             // System.out.println(end);
             if(end>=nums.length) end=nums.length-1;
             intervalReverse(start, end,nums);
@@ -39,7 +40,7 @@ public class Aug0422{
         return nums;
     }
 
-    private void intervalReverse(int start, int end,int[] nums){
+    private void intervalReverse(int start, int end,int[] nums){ //reverse for 1 interval
         while (end>start){
             int temp=nums[start];
             nums[start]=nums[end];
